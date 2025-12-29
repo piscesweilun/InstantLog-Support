@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstantLog Support</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h3 { color: #0066cc; margin-top: 25px; }
+        .contact-box { background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center; }
+        .button { background-color: #0066cc; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 10px; }
+        .lang-switch { text-align: right; margin-bottom: 20px; }
+        .lang-switch a { cursor: pointer; color: #0066cc; text-decoration: underline; margin-left: 10px; }
+        .hidden { display: none; }
+    </style>
+    <script>
+        function showLang(lang) {
+            document.querySelectorAll('section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(lang).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <div class="lang-switch">
+        <a onclick="showLang('en')">English</a> | 
+        <a onclick="showLang('zh')">繁體中文</a>
+    </div>
+    <!-- English Section -->
+    <section id="en">
+        <h1>InstantLog Support</h1>
+        <p>Welcome to the InstantLog support page. Here you can find answers to common questions or contact us directly.</p>
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <h3>1. How do I delete a record?</h3>
+        <p>Swipe left on any record in the History view to reveal the delete button.</p>
+        <h3>2. How does Smart Auto-Fill work?</h3>
+        <p>InstantLog analyzes your past records. If you often log "Lunch" at 12:00 PM, the app will suggest "Lunch" when you stamp around that time again. You can also set explicit rules in Settings.</p>
+        <h3>3. Does the app work without internet?</h3>
+        <p>Yes! All data is stored locally on your device. An internet connection is only required for backing up data or loading ads.</p>
+        <h3>4. How do I backup my data?</h3>
+        <p>Go to <strong>Settings > Data Management > Backup & Restore</strong>. This is a Premium feature that allows you to export your data for safekeeping.</p>
+        <div class="contact-box">
+            <h2>Need more help?</h2>
+            <p>If you couldn't find the answer you were looking for, please email us directly.</p>
+            <a href="mailto:piscesweilun.studio@gmail.com" class="button">Contact Support</a>
+            <p><small>Or email: piscesweilun.studio@gmail.com</small></p>
+        </div>
+    </section>
+    <!-- Chinese Section -->
+    <section id="zh" class="hidden">
+        <h1>InstantLog 支援中心</h1>
+        <p>歡迎來到瞬記 (InstantLog) 支援頁面。您可以在這裡找到常見問題的解答，或直接與我們聯繫。</p>
+        <h2>常見問題 (FAQ)</h2>
+        <h3>1. 如何刪除紀錄？</h3>
+        <p>在「歷史紀錄」頁面中，將任何一筆紀錄「向左滑動」，即可看到刪除按鈕。</p>
+        <h3>2. 智慧自動填寫是如何運作的？</h3>
+        <p>InstantLog 會分析您過去的紀錄習慣。例如，若您經常在中午 12 點記錄「午餐」，下次在這個時間打卡時，App 便會自動建議「午餐」。您也可以在「設定」中自行建立規則。</p>
+        <h3>3. 沒有網路可以使用嗎？</h3>
+        <p>可以！所有資料都儲存在您的手機內部。只有在備份資料或載入廣告時才需要網路連線。</p>
+        <h3>4. 如何備份資料？</h3>
+        <p>請前往 <strong>設定 > 資料管理 > 備份與還原</strong>。這是一項進階功能，讓您可以匯出資料以防止遺失。</p>
+        <div class="contact-box">
+            <h2>需要更多協助？</h2>
+            <p>若您找不到需要的解答，歡迎直接寫信給我們。</p>
+            <a href="mailto:piscesweilun.studio@gmail.com" class="button">聯絡客服</a>
+            <p><small>或寄信至：piscesweilun.studio@gmail.com</small></p>
+        </div>
+    </section>
+</body>
+</html>
