@@ -173,6 +173,45 @@
             text-decoration: underline;
         }
 
+        .feature-highlights {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+
+        .highlight-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-item h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .highlight-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
         footer {
             background: #333;
             color: white;
@@ -206,17 +245,32 @@
 
             h1 { font-size: 28px; }
             h2 { font-size: 18px; }
+
             section { padding: 20px; }
             main { padding: 20px 15px; }
         }
     </style>
     <script>
-        function showLang(lang) {
-            document.querySelectorAll('section[id]').forEach(el => el.classList.add('hidden'));
-            document.getElementById(lang).classList.remove('hidden');
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('instantlog_lang') || 'en';
+            showLang(savedLang);
+        });
 
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        function showLang(lang) {
+            localStorage.setItem('instantlog_lang', lang);
+
+            document.querySelectorAll('section[id]').forEach(el => el.classList.add('hidden'));
+            const target = document.getElementById(lang);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
         }
     </script>
 </head>
@@ -228,8 +282,8 @@
                 <a href="index.html">Home</a>
                 <a href="support.html">Support</a>
                 <div class="lang-switch">
-                    <button class="lang-btn active" onclick="showLang('en')">English</button>
-                    <button class="lang-btn" onclick="showLang('zh')">中文</button>
+                    <button class="lang-btn" data-lang="en" onclick="showLang('en')">English</button>
+                    <button class="lang-btn" data-lang="zh" onclick="showLang('zh')">中文</button>
                 </div>
             </nav>
         </div>
@@ -265,8 +319,32 @@
             <h2>2. App Permissions</h2>
             <ul>
                 <li><strong>Siri & Shortcuts:</strong> Used solely to allow you to create logs via voice commands or shortcuts.</li>
-                <li><strong>Notifications:</strong> Used to provide reminders if you set them (optional).</li>
-                <li><strong>Calendar:</strong> Allows you to sync logs with your calendar (optional).</li>
+
+            <div class="feature-highlights">
+                <h3 style="color: #667eea; margin-bottom: 20px;">🛡️ How We Protect Your Privacy</h3>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">📱</div>
+                        <h4>Local Storage</h4>
+                        <p>All your data stays on your device</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🔐</div>
+                        <h4>Encrypted</h4>
+                        <p>Your information is always secured</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">❌</div>
+                        <h4>No Tracking</h4>
+                        <p>We don't track your personal data</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">✅</div>
+                        <h4>Your Control</h4>
+                        <p>You manage your data completely</p>
+                    </div>
+                </div>
+            </div>
             </ul>
 
             <h2>3. Data Security</h2>
@@ -312,8 +390,6 @@
             <h2>2. App 權限</h2>
             <ul>
                 <li><strong>Siri 與捷徑：</strong> 僅用於讓您透過語音指令或捷徑快速打卡。</li>
-                <li><strong>通知：</strong> 若您設定提醒功能，僅用於發送通知（選用）。</li>
-                <li><strong>日曆：</strong> 可讓您將記錄同步至日曆（選用）。</li>
             </ul>
 
             <h2>3. 資料安全</h2>
