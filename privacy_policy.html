@@ -13,16 +13,17 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #333;
+            color: #e0e0e0;
             line-height: 1.7;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: rgba(22, 33, 62, 0.95);
             color: white;
             padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
         .header-content {
@@ -91,7 +92,7 @@
 
         h1 {
             font-size: 36px;
-            color: #333;
+            color: #fff;
             margin-bottom: 10px;
             border-bottom: 3px solid #667eea;
             padding-bottom: 15px;
@@ -99,7 +100,7 @@
 
         h2 {
             font-size: 22px;
-            color: #667eea;
+            color: #aebaf8;
             margin-top: 35px;
             margin-bottom: 20px;
             padding-left: 15px;
@@ -108,7 +109,7 @@
 
         h3 {
             font-size: 18px;
-            color: #555;
+            color: #ccc;
             margin-top: 20px;
             margin-bottom: 12px;
             font-weight: 600;
@@ -123,11 +124,11 @@
         }
 
         .meta-info strong {
-            color: #667eea;
+            color: #aebaf8;
         }
 
         section {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             margin-bottom: 25px;
             border-radius: 8px;
@@ -135,14 +136,14 @@
         }
 
         section p {
-            color: #555;
+            color: #ccc;
             margin-bottom: 15px;
             line-height: 1.8;
         }
 
         ul {
             margin: 15px 0 15px 25px;
-            color: #555;
+            color: #ccc;
         }
 
         ul li {
@@ -151,7 +152,7 @@
         }
 
         a {
-            color: #667eea;
+            color: #aebaf8;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -164,7 +165,7 @@
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: #667eea;
+            color: #aebaf8;
             text-decoration: none;
             font-weight: 500;
         }
@@ -174,12 +175,12 @@
         }
 
         .feature-highlights {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 12px;
             margin: 30px 0;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
-            border: 1px solid rgba(102, 126, 234, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .highlights-grid {
@@ -202,18 +203,18 @@
         }
 
         .highlight-item h4 {
-            color: #667eea;
+            color: #aebaf8;
             margin-bottom: 8px;
             font-size: 16px;
         }
 
         .highlight-item p {
             font-size: 14px;
-            color: #666;
+            color: #aaa;
         }
 
         footer {
-            background: #333;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             text-align: center;
             padding: 30px 20px;
@@ -317,35 +318,10 @@
             <p>For more information, please see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy →</a></p>
 
             <h2>2. App Permissions</h2>
-            <ul>
-                <li><strong>Siri & Shortcuts:</strong> Used solely to allow you to create logs via voice commands or shortcuts.</li>
+            <p><strong>InstantLog requires no special system permissions to function.</strong></p>
+            <p>We do not request access to your Camera, Microphone, Location, Contacts, or Photos. We respect your privacy by minimizing data access.</p>
 
-            <div class="feature-highlights">
-                <h3 style="color: #667eea; margin-bottom: 20px;">🛡️ How We Protect Your Privacy</h3>
-                <div class="highlights-grid">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">📱</div>
-                        <h4>Local Storage</h4>
-                        <p>All your data stays on your device</p>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">🔐</div>
-                        <h4>Encrypted</h4>
-                        <p>Your information is always secured</p>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">❌</div>
-                        <h4>No Tracking</h4>
-                        <p>We don't track your personal data</p>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✅</div>
-                        <h4>Your Control</h4>
-                        <p>You manage your data completely</p>
-                    </div>
-                </div>
-            </div>
-            </ul>
+
 
             <h2>3. Data Security</h2>
             <p>We implement reasonable security measures to protect your information. However, no method of transmission over the Internet or method of electronic storage is 100% secure. We encourage you to use strong passwords and keep your device secure.</p>
@@ -388,9 +364,8 @@
             <p>更多資訊請參閱 <a href="https://policies.google.com/privacy" target="_blank">Google 隱私權政策 →</a></p>
 
             <h2>2. App 權限</h2>
-            <ul>
-                <li><strong>Siri 與捷徑：</strong> 僅用於讓您透過語音指令或捷徑快速打卡。</li>
-            </ul>
+            <p><strong>InstantLog 不需要任何特殊系統權限即可運作。</strong></p>
+            <p>我們不會請求存取您的相機、麥克風、位置、聯絡人或照片。我們致力於保護您的隱私，僅在絕對必要時才存取最少量的資料。</p>
 
             <h2>3. 資料安全</h2>
             <p>我們採取合理的安全措施來保護您的資訊。然而，沒有任何網路傳輸或電子儲存方式是百分之百安全的。我們建議您使用強密碼並妥善保管您的裝置。</p>
@@ -408,7 +383,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 InstantLog. All rights reserved.</p>
+            <p>&copy; 2025 PiscesStudio. All rights reserved.</p>
     </footer>
 </body>
 </html>
