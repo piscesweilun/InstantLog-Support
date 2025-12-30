@@ -5,91 +5,334 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InstantLog Privacy Policy</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { margin-top: 30px; color: #0066cc; }
-        section { margin-bottom: 40px; }
-        .lang-switch { text-align: right; margin-bottom: 20px; }
-        .lang-switch a { cursor: pointer; color: #0066cc; text-decoration: underline; margin-left: 10px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #333;
+            line-height: 1.7;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            border-left: 2px solid rgba(255, 255, 255, 0.3);
+            padding-left: 15px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #667eea;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid #764ba2;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .meta-info {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .meta-info strong {
+            color: #667eea;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        section p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin: 15px 0 15px 25px;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
         .hidden { display: none; }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .lang-switch {
+                border-left: none;
+                border-top: 2px solid rgba(255, 255, 255, 0.3);
+                padding-left: 0;
+                padding-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            h1 { font-size: 28px; }
+            h2 { font-size: 18px; }
+            section { padding: 20px; }
+            main { padding: 20px 15px; }
+        }
     </style>
     <script>
         function showLang(lang) {
-            document.querySelectorAll('section').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('section[id]').forEach(el => el.classList.add('hidden'));
             document.getElementById(lang).classList.remove('hidden');
+
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
         }
     </script>
 </head>
 <body>
-    <div class="lang-switch">
-        <a onclick="showLang('en')">English</a> | 
-        <a onclick="showLang('zh')">繁體中文</a>
-    </div>
-    <!-- English Section -->
-    <section id="en">
-        <h1>Privacy Policy</h1>
-        <p><strong>Effective Date:</strong> December 29, 2025</p>
-        <p>This Privacy Policy describes how <strong>InstantLog</strong> ("we", "our", or "us") collects, uses, and discloses your information when you use our mobile application (the "App").</p>
-        <h2>1. Data Collection and Usage</h2>
-        <p>We believe in privacy by design. Most of your data is stored locally on your device.</p>
-        
-        <h3>Local Data</h3>
-        <p>Your timestamps, notes, and tags are stored locally on your device using on-device database technologies. We do not transmit this personal data to our own servers.</p>
-        <h3>Third-Party Services (Advertising)</h3>
-        <p>The App uses <strong>Google AdMob</strong> to display advertisements. AdMob may collect and use data to serve personalized ads, including:</p>
-        <ul>
-            <li>Device Identifiers (e.g., IDFA)</li>
-            <li>Usage Data (e.g., crash logs, diagnostics)</li>
-            <li>Approximate Location</li>
-        </ul>
-        <p>For more information, please see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
-        <h2>2. App Permissions</h2>
-        <ul>
-            <li><strong>Siri & Shortcuts:</strong> Used solely to allow you to create logs via voice commands or shortcuts.</li>
-            <li><strong>Notifications:</strong> Used to provide reminders if you set them (optional).</li>
-        </ul>
-        <h2>3. Data Security</h2>
-        <p>We implement reasonable security measures to protect your information. However, no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
-        <h2>4. Children's Privacy</h2>
-        <p>The App is not knowingly directed to children under the age of 4. We do not knowingly collect personal information from children.</p>
-        <h2>5. Changes to This Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-        <p>piscesweilun.studio@gmail.com</p>
-    </section>
-    <!-- Chinese Section -->
-    <section id="zh" class="hidden">
-        <h1>隱私權政策 (Privacy Policy)</h1>
-        <p><strong>生效日期：</strong> 2025 年 12 月 29 日</p>
-        <p>本隱私權政策說明 <strong>InstantLog 瞬記</strong>（以下簡稱「我們」）在您使用我們的行動應用程式（以下簡稱「本 App」）時，如何收集、使用與揭露您的資料。</p>
-        <h2>1. 資料收集與使用</h2>
-        <p>我們重視您的隱私，絕大多數的功能資料皆儲存於您的裝置端。</p>
-        
-        <h3>本機資料</h3>
-        <p>您的時間戳記、備註與標籤等資料，皆使用裝置端的資料庫技術儲存於您的手機中。我們不會將這些個人記錄傳送到我們的伺服器。</p>
-        <h3>第三方服務（廣告）</h3>
-        <p>本 App 使用 <strong>Google AdMob</strong> 來顯示廣告。AdMob 可能會收集並使用數據來提供個人化廣告，包含：</p>
-        <ul>
-            <li>裝置識別碼 (例如 IDFA)</li>
-            <li>使用資料 (例如當機日誌、診斷資料)</li>
-            <li>粗略位置資訊</li>
-        </ul>
-        <p>更多資訊請參閱 <a href="https://policies.google.com/privacy" target="_blank">Google 隱私權政策</a>。</p>
-        <h2>2. App 權限</h2>
-        <ul>
-            <li><strong>Siri 與捷徑：</strong> 僅用於讓您透過語音指令或捷徑快速打卡。</li>
-            <li><strong>通知：</strong> 若您設定提醒功能，僅用於發送通知（選用）。</li>
-        </ul>
-        <h2>3. 資料安全</h2>
-        <p>我們採取合理的安全措施來保護您的資訊。然而，沒有任何網路傳輸或電子儲存方式是百分之百安全的。</p>
-        <h2>4. 兒童隱私</h2>
-        <p>本 App 並非針對 4 歲以下兒童設計。我們不會故意收集兒童的個人資訊。</p>
-        <h2>5. 政策變更</h2>
-        <p>我們可能會不時更新隱私權政策。若有變更，我們將在此頁面發布新的隱私權政策以通知您。</p>
-        <h2>6. 聯絡我們</h2>
-        <p>如果您對本隱私權政策有任何疑問，請透過以下方式聯絡我們：</p>
-        <p>piscesweilun.studio@gmail.com</p>
-    </section>
+    <header>
+        <div class="header-content">
+            <div class="logo">InstantLog</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <div class="lang-switch">
+                    <button class="lang-btn active" onclick="showLang('en')">English</button>
+                    <button class="lang-btn" onclick="showLang('zh')">中文</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- English Section -->
+        <section id="en">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <h1>🔒 Privacy Policy</h1>
+            
+            <div class="meta-info">
+                <strong>Effective Date:</strong> December 29, 2025
+            </div>
+            
+            <p>This Privacy Policy describes how <strong>InstantLog</strong> ("we", "our", or "us") collects, uses, and discloses your information when you use our mobile application (the "App").</p>
+
+            <h2>1. Data Collection and Usage</h2>
+            <p>We believe in privacy by design. Most of your data is stored locally on your device. Your personal information is protected with the highest standards of security.</p>
+            
+            <h3>📱 Local Data</h3>
+            <p>Your timestamps, notes, and tags are stored locally on your device using on-device database technologies. We do not transmit this personal data to our own servers. Your data remains completely under your control.</p>
+
+            <h3>🎯 Third-Party Services (Advertising)</h3>
+            <p>The App uses <strong>Google AdMob</strong> to display advertisements. AdMob may collect and use data to serve personalized ads, including:</p>
+            <ul>
+                <li>Device Identifiers (e.g., IDFA)</li>
+                <li>Usage Data (e.g., crash logs, diagnostics)</li>
+                <li>Approximate Location</li>
+            </ul>
+            <p>For more information, please see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy →</a></p>
+
+            <h2>2. App Permissions</h2>
+            <ul>
+                <li><strong>Siri & Shortcuts:</strong> Used solely to allow you to create logs via voice commands or shortcuts.</li>
+                <li><strong>Notifications:</strong> Used to provide reminders if you set them (optional).</li>
+                <li><strong>Calendar:</strong> Allows you to sync logs with your calendar (optional).</li>
+            </ul>
+
+            <h2>3. Data Security</h2>
+            <p>We implement reasonable security measures to protect your information. However, no method of transmission over the Internet or method of electronic storage is 100% secure. We encourage you to use strong passwords and keep your device secure.</p>
+
+            <h2>4. Children's Privacy</h2>
+            <p>The App is not knowingly directed to children under the age of 4. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child, we will take steps to delete such information promptly.</p>
+
+            <h2>5. Changes to This Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. Your continued use of the App following the posting of revised Privacy Policy means that you accept and agree to the changes.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:piscesweilun.studio@gmail.com">piscesweilun.studio@gmail.com</a></p>
+        </section>
+
+        <!-- Chinese Section -->
+        <section id="zh" class="hidden">
+            <a href="index.html" class="back-link">← 返回首頁</a>
+            <h1>🔒 隱私權政策</h1>
+            
+            <div class="meta-info">
+                <strong>生效日期：</strong> 2025 年 12 月 29 日
+            </div>
+            
+            <p>本隱私權政策說明 <strong>InstantLog 瞬記</strong>（以下簡稱「我們」）在您使用我們的行動應用程式（以下簡稱「本 App」）時，如何收集、使用與揭露您的資料。</p>
+
+            <h2>1. 資料收集與使用</h2>
+            <p>我們重視您的隱私，採用隱私保護設計的方式。絕大多數的功能資料皆儲存於您的裝置端，您的個人資訊受到最高標準的安全保護。</p>
+            
+            <h3>📱 本機資料</h3>
+            <p>您的時間戳記、備註與標籤等資料，皆使用裝置端的資料庫技術儲存於您的手機中。我們不會將這些個人記錄傳送到我們的伺服器。您的資料完全掌握在您自己的手中。</p>
+
+            <h3>🎯 第三方服務（廣告）</h3>
+            <p>本 App 使用 <strong>Google AdMob</strong> 來顯示廣告。AdMob 可能會收集並使用數據來提供個人化廣告，包含：</p>
+            <ul>
+                <li>裝置識別碼 (例如 IDFA)</li>
+                <li>使用資料 (例如當機日誌、診斷資料)</li>
+                <li>粗略位置資訊</li>
+            </ul>
+            <p>更多資訊請參閱 <a href="https://policies.google.com/privacy" target="_blank">Google 隱私權政策 →</a></p>
+
+            <h2>2. App 權限</h2>
+            <ul>
+                <li><strong>Siri 與捷徑：</strong> 僅用於讓您透過語音指令或捷徑快速打卡。</li>
+                <li><strong>通知：</strong> 若您設定提醒功能，僅用於發送通知（選用）。</li>
+                <li><strong>日曆：</strong> 可讓您將記錄同步至日曆（選用）。</li>
+            </ul>
+
+            <h2>3. 資料安全</h2>
+            <p>我們採取合理的安全措施來保護您的資訊。然而，沒有任何網路傳輸或電子儲存方式是百分之百安全的。我們建議您使用強密碼並妥善保管您的裝置。</p>
+
+            <h2>4. 兒童隱私</h2>
+            <p>本 App 並非針對 4 歲以下兒童設計。我們不會故意收集兒童的個人資訊。若我們發現已收集兒童資訊，我們將迅速採取措施刪除該資訊。</p>
+
+            <h2>5. 政策變更</h2>
+            <p>我們可能會不時更新隱私權政策。若有變更，我們將在此頁面發布新的隱私權政策以通知您。您繼續使用本 App 即表示您接受並同意這些變更。</p>
+
+            <h2>6. 聯絡我們</h2>
+            <p>如果您對本隱私權政策或我們的隱私保護措施有任何疑問，請透過以下方式聯絡我們：</p>
+            <p><strong>信箱：</strong> <a href="mailto:piscesweilun.studio@gmail.com">piscesweilun.studio@gmail.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 InstantLog. All rights reserved.</p>
+    </footer>
 </body>
 </html>
